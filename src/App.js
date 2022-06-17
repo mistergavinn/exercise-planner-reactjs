@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import BuildingArea from './Components/BuildingArea';
+import DateDisplay from './Components/DateDisplayComponent';
+import WeeklyStatsDisplay from './Components/Displays/WeeklyStatsDisplay';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1 className='p-1'>
+          Exercise Planner Development
+        </h1> 
       </header>
+      <div className='row border-outline' >
+        <div className='container col-9 border-outline'>
+          <DateDisplay />
+          
+        </div>
+        <div className='col-3 border-outline'>
+          <WeeklyStatsDisplay />
+        </div>
+      </div>
+      <BuildingArea />
     </div>
   );
 }
