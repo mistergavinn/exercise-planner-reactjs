@@ -1,7 +1,7 @@
-import './App.css';
+import './App.scss';
 import BuildingArea from './Components/BuildingArea';
-import DateDisplay from './Components/DateDisplayComponent';
-import WeeklyStatsDisplay from './Components/Displays/WeeklyStatsDisplay';
+import WeeklyStats from './Components/Displays/WeeklyStats';
+import WeekView from './Components/Displays/WeekView';
 
 
 function App() {
@@ -13,12 +13,12 @@ function App() {
         </h1> 
       </header>
       <div className='row border-outline' >
-        <div className='container col-9 border-outline'>
-          <DateDisplay />
+        <div className='col-10 week-view-container border-outline'>
+          <WeekView />
           
         </div>
-        <div className='col-3 border-outline'>
-          <WeeklyStatsDisplay />
+        <div className='col-2 border-outline'>
+          <WeeklyStats />
         </div>
       </div>
       <BuildingArea />
