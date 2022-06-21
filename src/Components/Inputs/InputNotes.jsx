@@ -3,10 +3,11 @@ import React, { Component } from 'react';
 import './InputNotes.scss'
 
 class InputNotes extends Component {
-    state = { notes: '' } 
+    state = { notes: this.props.notes } 
 
     handleChange = (e) => {
-        this.setState({ notes: e.target.value})
+        this.setState({ notes: e.target.value});
+        this.props.onNotesChange(e.target.value);
     }
 
     render() { 
