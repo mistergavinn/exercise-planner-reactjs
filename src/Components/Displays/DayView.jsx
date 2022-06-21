@@ -27,7 +27,10 @@ class DayView extends Component {
                         duration ={this.props.dayView.duration}
                         onDurationChange={(duration) => this.props.onDurationChange(this.props.dayView.id, duration)}
                     />
-                    <InputNotes />
+                    <InputNotes 
+                     notes ={this.props.dayView.notes}
+                     onNotesChange={(notes) => this.props.onNotesChange(this.props.dayView.id, notes)}
+                    />
                 </div>
             </div>
         );
