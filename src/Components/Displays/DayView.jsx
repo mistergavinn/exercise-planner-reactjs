@@ -12,7 +12,6 @@ class DayView extends Component {
      } 
 
     render() { 
-        console.log('dayview props',this.props);
         return (
             <div className='border-outline view-container'>
                 <div>
