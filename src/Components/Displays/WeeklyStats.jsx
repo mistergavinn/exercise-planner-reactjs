@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './WeeklyStatsDisplay.scss';
 
-class WeeklyStatsDisplay extends Component {
+class WeeklyStats extends Component {
     state = {  } 
     render() { 
         return (
@@ -25,4 +24,4 @@ class WeeklyStatsDisplay extends Component {
     }
 }
  
-export default WeeklyStatsDisplay;
+export default WeeklyStats;
