@@ -17,12 +17,16 @@ class DayView extends Component {
             <div className='border-outline view-container'>
                 <div>
                     <InputDate />
-                    <h2>{this.props.month}</h2>
-                    <h3>{this.props.day}</h3>
+                    <h2>{this.props.dayView.month}</h2>
+                    <h3>{this.props.dayView.day}</h3>
                     <InputDistance 
-                        distance={this.props.distance} 
-                        onDistChange={(distance) => this.props.onDistChange(this.props.id,distance)}/>
-                    <InputDuration />
+                        distance={this.props.dayView.distance} 
+                        onDistChange={(distance) => this.props.onDistChange(this.props.dayView.id, distance)}
+                    />
+                    <InputDuration 
+                        duration ={this.props.dayView.duration}
+                        onDurationChange={(duration) => this.props.onDurationChange(this.props.dayView.id, duration)}
+                    />
                     <InputNotes />
                 </div>
             </div>

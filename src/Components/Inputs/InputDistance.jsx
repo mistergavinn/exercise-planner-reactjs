@@ -9,16 +9,14 @@ class InputDistance extends Component {
     }
 
     render() { 
-        console.log("Input distance", this.state.distance);
         return (
             <div className=''>
             <form>
                 <span className=''>Distance:</span><br/>
                 <input type='text'
-                defaultValue={this.props.distance}
-                value={this.state.distance}
-                placeholder='Planned Distance'
-                onChange={this.handleChange} />
+                    value={this.state.distance}
+                    placeholder='Planned Distance'
+                    onChange={this.handleChange} />
             </form>
             <span>{this.state.distance}</span>
             </div>
