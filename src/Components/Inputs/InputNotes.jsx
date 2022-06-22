@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import './InputNotes.scss'
-
 class InputNotes extends Component {
     state = { notes: this.props.notes } 
 

@@ -4,8 +4,6 @@ import InputDistance from '../Inputs/InputDistance';
 import InputDuration from '../Inputs/InputDuration';
 import InputNotes from '../Inputs/InputNotes';
 
-import "./DayView.scss";
-
 class DayView extends Component {
     state = { 
         
