@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WeeklyStats from './Displays/WeeklyStats';
+
 
 import './BuildingArea.scss';
 
@@ -17,7 +17,7 @@ class BuildingArea extends Component {
         return (
             <div className="border-outline ">
                 <div className='test-area'>
-                   <WeeklyStats />
+
                 </div>
 
             </div>

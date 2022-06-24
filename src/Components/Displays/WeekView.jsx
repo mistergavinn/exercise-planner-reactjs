@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DayView from './DayView';
+import WeeklyStats from './WeeklyStats';
 
 class WeekView extends Component {
     state = { 
@@ -36,14 +37,19 @@ class WeekView extends Component {
     render() { 
         return (
             <div className="border-outline ">
-                <div className='test-area'>
-                    {this.state.dayViews.map(dayView => 
-                    <DayView key={dayView.id} 
-                    dayView = {dayView} 
-                    onDistChange ={this.handleDistChange}
-                    onDurationChange ={this.handleDurationChange}
-                    onNotesChange ={this.handleNotesChange}
-                    />)}
+                <div className="col-9">
+                    <div className='test-area'>
+                        {this.state.dayViews.map(dayView => 
+                        <DayView key={dayView.id} 
+                        dayView = {dayView} 
+                        onDistChange ={this.handleDistChange}
+                        onDurationChange ={this.handleDurationChange}
+                        onNotesChange ={this.handleNotesChange}
+                        />)}
+                    </div>
+                </div>
+                <div className="col-3">
+                    <WeeklyStats />
                 </div>
             </div>
         );
