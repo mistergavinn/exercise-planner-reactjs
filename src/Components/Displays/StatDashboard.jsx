@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import WeeklyStats from './WeeklyStats';
 
 class StatDashboard extends Component {
-    state = {  } 
+  state = {  } 
+  componentDidMount() {
+    console.log("did mount StatDashboard");
+    console.log('props',this.props);
+  }
+  componentDidUpdate() {
+    console.log("did update StatDashboard");
+    console.log('props',this.props);
+  }
     render() { 
         return (
           <div>
@@ -15,7 +23,7 @@ class StatDashboard extends Component {
                 Pace/Power/HR zones component
               </div>
               <div className="col-4 border-outline">
-                <WeeklyStats />
+                <WeeklyStats dayViews={this.props.dayViews}/>
               </div>
             </div>
           </div>

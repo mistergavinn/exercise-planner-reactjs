@@ -6,28 +6,51 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import ShowAllDistance from './ShowAllDistance';
 
 function createData(metric, run, bike, others) {
     return { metric, run, bike, others};
 };
 
-const rows = [
+let rows = [
     createData('Distance', 32, 120, 0),
     createData('Duration (Hours)', 4, 5, 0.2),
 ];
 
 class WeeklyStats extends Component {
-    state = {  } 
+  // state = {
+  //   dayViews: this.props.dayViews,
+  //   totalDistance: 0
+  // }
+  componentDidMount() {
+    console.log("did mount WeeklStats");
+    console.log('props',this.props);
+  }
+  componentDidUpdate() {
+    console.log("did update WeeklStats");
+    console.log('props',this.props);
+  }
+
+  getAllDistance = () => {
+    // console.log("GetAllDist method");
+    // console.log(this.props);
+    // const dayViews = this.props.dayViews;
+    // const totalDistance = dayViews.reduce((total, current) => total + parseInt(current.distance,10),0);
+    // console.log("totalDistance is: ",totalDistance);
+    return <h3>test</h3>;
+  }
+
     render() { 
         return (
           <div>
             <h3>Weekly Total</h3>
+            <button onClick={this.getAllDistance}></button>
             <div>
               <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 100 }} aria-label="simple table">
+                <Table sx={{ minWidth: 100 }} aria-label="Weekly total" size="small">
                   <TableHead>
                     <TableRow>
-                      <TableCell align="left">Metrics</TableCell>
+                      <TableCell align="left"></TableCell>
                       <TableCell align="center">Run</TableCell>
                       <TableCell align="center">Bike</TableCell>
                       <TableCell align="center">Others</TableCell>
@@ -52,12 +75,12 @@ class WeeklyStats extends Component {
 
                     <TableRow>
                       <TableCell align="left" colSpan={2}></TableCell>
-                      <TableCell alight="left">Distance</TableCell>
-                      <TableCell alight="left">Duration (hours)</TableCell>
+                      <TableCell alight="center">Distance</TableCell>
+                      <TableCell alight="center">Duration (hours)</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell align="left" colSpan={2}>Total</TableCell>
-                      <TableCell alight="center">xxx</TableCell>
+                      <TableCell alight="center">{this.getAllDistance()}</TableCell>
                       <TableCell alight="center">7</TableCell>
                     </TableRow>
                   </TableBody>

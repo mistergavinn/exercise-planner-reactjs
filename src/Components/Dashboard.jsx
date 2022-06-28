@@ -12,14 +12,23 @@ class Dashboard extends Component {
         { id: 5, day: 'Friday', adddate: 4, distance: 0, duration:0, notes:''},
         { id: 6, day: 'Saturday', adddate: 5, distance: 0, duration:0, notes:''},
         { id: 7, day: 'Sunday', adddate: 6, distance: 0, duration:0, notes:''}  
+    ],
+    totalSums: [
+      { run:0, bike:0, others:0, totalDistance:0, totalDuration:0}
     ]
  }
- 
+ componentDidMount() {
+  console.log("did mount");
+}
+componentDidUpdate() {
+  console.log("did update");
+}
  handleDistChange = (dayId, distance) => {
   const dayViews = [...this.state.dayViews];
   const index = dayViews.map(c => c.id).indexOf(dayId);
   dayViews[index].distance = distance;
   this.setState({dayViews});
+  this.calculateDistance();
 }
 handleDurationChange = (dayId, duration) => {
   const dayViews = [...this.state.dayViews];
@@ -33,6 +42,15 @@ handleNotesChange = (dayId, notes) => {
   dayViews[index].notes = notes;
   this.setState({dayViews});
 }
+calculateDistance = () => {
+  const totalSums = [...this.state.totalSums];
+  console.log("CalculateDistance method");
+  console.log(this.state.totalSums);
+  const totalDistance = this.state.dayViews.reduce((total, current) => total + parseInt(current.distance,10),0);
+  console.log("totalDistance is: ",totalDistance);
+
+}
+
     render() { 
         return (
           <div>
@@ -40,7 +58,7 @@ handleNotesChange = (dayId, notes) => {
               <h1 className="p-1">Exercise Planner Development</h1>
             </header>
             <div className="col-12 border-outline">
-              <StatDashboard />
+              <StatDashboard dayViews={this.state.dayViews}/>
             </div>
 
             <div className="row border-outline">
